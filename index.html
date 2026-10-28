@@ -2,150 +2,155 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nasirda Election Survey</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>नासिरदा सर्वे रिजल्ट</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033}
-header{background:#123b70;color:white;text-align:center;padding:24px 12px}
-header h1{margin:0 0 8px;font-size:27px}
-main{max-width:650px;margin:18px auto;padding:0 12px}
-.card{background:white;border-radius:14px;padding:18px;margin-bottom:16px;box-shadow:0 3px 12px #00000010}
-.notice{background:#fff4d6;padding:12px;border-radius:9px;font-size:13px;line-height:1.5}
-.candidate{border:1px solid #e2e8f0;padding:14px;border-radius:12px;margin:14px 0}
-.candidate h3{margin:0 0 12px}
-button{border:0;border-radius:8px;padding:11px 16px;background:#1769d2;color:white;font-size:15px;cursor:pointer}
-button:disabled{background:#94a3b8;cursor:not-allowed}
-.barbg{height:22px;background:#e2e8f0;border-radius:20px;overflow:hidden;margin:9px 0}
-.bar{height:100%;background:#1976d2;color:white;font-size:12px;text-align:right;padding-right:5px;min-width:0}
-.small{font-size:13px;color:#64748b}
-#status{line-height:1.5}
-footer{text-align:center;padding:20px;color:#64748b;font-size:12px}
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f3f5f9;
+  color:#222;
+}
+
+.header{
+  background:linear-gradient(135deg,#111827,#374151);
+  color:white;
+  text-align:center;
+  padding:28px 15px;
+}
+
+.header h1{
+  margin:0;
+  font-size:30px;
+}
+
+.header p{
+  margin:8px 0 0;
+  opacity:.85;
+}
+
+.container{
+  max-width:700px;
+  margin:25px auto;
+  padding:0 15px;
+}
+
+.notice{
+  background:#fff8e1;
+  border:1px solid #ffe08a;
+  padding:12px;
+  border-radius:10px;
+  text-align:center;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.card{
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.name{
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.percent{
+  font-size:25px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.bar-bg{
+  width:100%;
+  height:16px;
+  background:#e5e7eb;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.bar{
+  height:100%;
+  background:linear-gradient(90deg,#2563eb,#06b6d4);
+  border-radius:20px;
+}
+
+.footer{
+  text-align:center;
+  color:#777;
+  font-size:13px;
+  padding:20px;
+}
 </style>
 </head>
+
 <body>
-<header>
-  <h1>🗳️ नासिरदा चुनाव सर्वे</h1>
-  <div>उम्मीदवारों के समर्थन का अनौपचारिक सर्वे</div>
-</header>
 
-<main>
-  <section class="card">
-    <div class="notice">
-      <b>महत्वपूर्ण सूचना:</b> यह एक अनौपचारिक सर्वे है, आधिकारिक चुनाव परिणाम नहीं।
-      परिणाम केवल दर्ज किए गए सर्वे वोट दिखाएँगे और पूरे गाँव की राय का प्रतिनिधित्व
-      ज़रूरी नहीं करते।
+<div class="header">
+  <h1>नासिरदा सर्वे रिजल्ट</h1>
+  <p>उम्मीदवारों के समर्थन का अनौपचारिक सर्वे</p>
+</div>
+
+<div class="container">
+
+  <div class="notice">
+    ⚠️ यह अनौपचारिक सर्वे है। यह आधिकारिक चुनाव परिणाम नहीं है।
+  </div>
+
+
+  <!--
+  ==================================================
+  RESULT UPDATE करने के लिए सिर्फ नीचे नाम और %
+  बदलना है।
+  ==================================================
+  -->
+
+
+  <div class="card">
+    <div class="name">जगदीश धाकड़</div>
+    <div class="percent">28%</div>
+
+    <div class="bar-bg">
+      <div class="bar" style="width:28%"></div>
     </div>
-    <h2>उम्मीदवार चुनें</h2>
-    <p class="small">नीचे दिए गए उम्मीदवारों में से अपना विकल्प चुनें।</p>
-    <div id="candidates">डेटा लोड हो रहा है...</div>
-    <p id="status" role="status"></p>
-  </section>
+  </div>
 
-  <section class="card">
-    <h2>📊 सर्वे परिणाम</h2>
-    <p class="small">प्रतिशत दर्ज किए गए सर्वे वोटों पर आधारित होंगे।</p>
-    <div id="results">परिणाम लोड हो रहे हैं...</div>
-    <p id="total"></p>
-  </section>
-</main>
 
-<footer>
-  Nasirda Election Survey · अनौपचारिक सर्वे
-</footer>
+  <div class="card">
+    <div class="name">मनोज खांडल</div>
+    <div class="percent">16%</div>
 
-<script type="module">
-import { initializeApp } from
-  "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import {
-  getFirestore, collection, getDocs
-} from
-  "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+    <div class="bar-bg">
+      <div class="bar" style="width:16%"></div>
+    </div>
+  </div>
 
-const firebaseConfig = {
-  apiKey: "AIzaSyB1GA2HcMlCfJ9VSpakUsFlV4HxvlhkGKI",
-  authDomain: "nasirda-election-survey.firebaseapp.com",
-  projectId: "nasirda-election-survey",
-  storageBucket: "nasirda-election-survey.firebasestorage.app",
-  messagingSenderId: "331958985308",
-  appId: "1:331958985308:web:33f4ca57f91c857d24fc99",
-  measurementId: "G-L4CZTZZJTS"
-};
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const candidatesEl = document.getElementById("candidates");
-const resultsEl = document.getElementById("results");
-const statusEl = document.getElementById("status");
+  <div class="card">
+    <div class="name">शिवराज धाकड़</div>
+    <div class="percent">12%</div>
 
-function make(tag, text, cls) {
-  const el = document.createElement(tag);
-  el.textContent = text;
-  if (cls) el.className = cls;
-  return el;
-}
+    <div class="bar-bg">
+      <div class="bar" style="width:12%"></div>
+    </div>
+  </div>
 
-async function loadSurvey() {
-  candidatesEl.replaceChildren();
-  resultsEl.replaceChildren();
 
-  try {
-    const snapshot = await getDocs(collection(db, "candidates"));
-    const candidates = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    })).filter(c =>
-      typeof c.name === "string" &&
-      Number.isFinite(Number(c.votes)) &&
-      Number(c.votes) >= 0
-    );
+  <div class="footer">
+    Nasirda Survey • Unofficial Survey
+  </div>
 
-    if (!candidates.length) {
-      candidatesEl.textContent =
-        "अभी उम्मीदवारों का डेटा उपलब्ध नहीं है।";
-      resultsEl.textContent = "अभी परिणाम उपलब्ध नहीं हैं।";
-      return;
-    }
+</div>
 
-    // votes को तभी वास्तविक वोट माना जाएगा जब वे सुरक्षित बैकएंड
-    // द्वारा सत्यापित किए गए हों। मौजूदा documents में यह पुष्टि नहीं है।
-    const total = candidates.reduce((sum, c) => sum + Number(c.votes), 0);
-
-    for (const c of candidates) {
-      const box = make("div", "", "candidate");
-      box.append(make("h3", c.name));
-      box.append(make("p", "वोटिंग सुविधा अभी सेटअप नहीं हुई है।", "small"));
-      candidatesEl.append(box);
-
-      const resultBox = make("div", "");
-      const pct = total > 0 ? (Number(c.votes) / total) * 100 : 0;
-      resultBox.append(make("b", c.name));
-      resultBox.append(make("p", `${pct.toFixed(1)}% · ${Number(c.votes)} दर्ज संख्या`, "small"));
-      const bg = make("div", "", "barbg");
-      const bar = make("div", "", "bar");
-      bar.style.width = `${pct}%`;
-      bar.setAttribute("aria-label", `${pct.toFixed(1)} प्रतिशत`);
-      bg.append(bar);
-      resultBox.append(bg);
-      resultsEl.append(resultBox);
-    }
-
-    document.getElementById("total").textContent =
-      `कुल दर्ज संख्या: ${total}`;
-
-    statusEl.textContent =
-      "उम्मीदवारों की सूची लोड हो गई। सुरक्षित वोटिंग चालू करने के लिए अगला सेटअप बाकी है।";
-  } catch (error) {
-    console.error(error);
-    candidatesEl.textContent = "डेटा लोड नहीं हुआ।";
-    resultsEl.textContent =
-      "Firebase Rules या डेटाबेस कनेक्शन की जाँच करनी होगी।";
-    statusEl.textContent =
-      "डेटाबेस से कनेक्ट नहीं हो पाया। मौजूदा सुरक्षा नियम पढ़ने की अनुमति नहीं देते हो सकते हैं।";
-  }
-}
-
-loadSurvey();
-</script>
 </body>
 </html>
